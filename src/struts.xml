@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	
+	<package name="hellow" extends="struts-default" namespace="/">
+		<!-- name访问名称 -->
+		<action name="hellowAction" class="cn.hr.action.demo.HellowAction">
+			<!-- 配置方法的返回值到页面 -->
+			<result name="ok">/hellow.jsp</result>
+		</action>
+		
+		<!-- 配置add.action  -->
+		<action name="add" class="cn.hr.action.demo.MethodAction" method="add"></action>
+		<!-- 配置update.action -->
+		<action name="update" class="cn.hr.action.demo.MethodAction" method="update"></action>
+		
+		<!-- 用*号配置 UserAction -->
+		<action name="user_*" class="cn.hr.action.demo.UserAction" method="{1}"></action>
+	</package>
+	
+</struts>
